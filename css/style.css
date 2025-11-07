@@ -1,0 +1,666 @@
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+body{
+    color:rgb(0, 0, 0);
+    background-color: rgb(250, 253, 252);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin: 0 auto; /* centraliza horizontalmente */
+  padding: 0;
+}
+
+
+a{
+  color: rgb(117, 157, 192);
+  text-decoration:none;
+  margin-right: 0;
+  font-size: 20px;
+  padding: 10px;
+}
+
+/* fazendo o link parcecer mais */
+a:hover {
+  text-decoration: underline;
+  animation: underline-animation 0.3s forwards;
+
+}
+
+
+.ods-img {
+  margin-left:30px;
+    width: 50px;
+    height: 50px;
+}
+
+.logo {
+  display: flex;
+  margin-right: 0;
+  align-items: center;
+  gap: 10px; /* espaço entre a imagem e o texto */
+  color:rgb(0, 0, 0);
+  font-size: 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.nav-container {
+
+  border-radius: 50px;      
+  margin: 20px auto;
+  display: flex;
+  margin-top: 50px;            /* distância das bordas da página */
+  justify-content: space-between; /* logo de um lado, menu do outro */
+  align-items: center; /* centraliza verticalmente */
+  width: 90%;  /* faz a barra não ocupar 100% */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra leve */
+}
+
+
+
+.barra2 {
+  font-size: 11px;
+  width: 12%;   
+  border: 0px solid #ccc; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra leve */
+  border-radius: 50px;
+  margin: 80px auto;
+  background-color:rgb(141, 188, 200);
+  color: rgb(49, 43, 36);  
+  text-align: center;
+}
+
+.logo-heart{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.heart-img {
+  width: 20px;
+  height: 20px;
+}
+
+.sobre{
+  
+  text-align: center; /* centraliza o texto da seção */
+}
+
+.sobre h1{
+  font-size: 80px;
+}
+
+
+.texto-sobre{
+
+max-width: 60%;
+margin: 20px auto;    
+font-size: 20px;
+line-height: 1.6;
+text-align: center;
+}
+
+
+/* ===== CONHEÇA ODS========*/
+.conheca-ods{  
+
+  justify-content: center;
+  display: flex;
+  font-size: 10px;
+  width: 20%;   
+  border: 0px solid #ccc; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra leve */
+  border-radius: 50px;
+  margin: 85px auto;
+  background-color:rgb(234, 238, 238);
+  color: rgb(49, 43, 36);  
+}
+
+/* ======= PAINEL ODS ======= */
+
+/* container principal do painel */
+.painel-ods {
+  width: 80%;
+  padding: 60px 20px;
+
+
+  box-decoration-break: inherit;
+  margin: 20px auto;
+  border-radius:30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra leve */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* grade de cards */
+.ods-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(5, 1fr); /* FORÇA 5 COLUNAS IGUAIS */
+  gap: 20px;
+  max-width: 1500px;
+  justify-items: center;
+  align-items: start;
+}
+
+/* cada card que pode virar */
+.card-flip-container {
+  perspective: 1000px;
+  width: 180px;
+  height: 180px;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+/* animando o hover*/
+
+.card-flip-container:hover .card {
+    /* Efeito borda com o box-shadow */
+    box-shadow: 0 0 0 4px #a6d7ec, /* anel de cor primária */
+    0 4px 8px rgba(0, 0, 0, 0.2); /* sombra original */
+
+    transform: scale(1.06);
+}
+/* o card em si */
+
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  border-radius: 15px;
+}
+
+
+/* quando clicado */
+.card-flip-container.flipped .card {
+  transform: rotateY(180deg);
+
+}
+
+/* frente e verso */
+.front, 
+.back {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+
+  border-radius: 15px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+}
+
+/* frente (imagem) */
+.front {
+  background-color: #fff;
+
+  background-position: center;
+  background-repeat: no-repeat ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*faz a imagem preencher todo o espaço */
+  border-radius: 10px;  /*segue o formato do card*/
+  object-fit: contain;
+}
+
+/* verso (texto) */
+.back {
+  background-color: rgb(117, 157, 192);
+  color: #fff;
+  transform: rotateY(180deg);
+  flex-direction: column;
+}
+
+/* Aplica box-sizing APENAS aos elementos do card para manter o tamanho exato */
+.card, .front, .back {
+  box-sizing: border-box;
+}
+
+
+.back h3 {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.back p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/*=== valores===*/
+
+.title-conclusion{
+  text-align: center;
+  margin: 70px auto; 
+}
+
+.title p{
+  font-size: 20px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.descripition-desenvM {
+  display: flex;
+  justify-content: center; 
+  gap: 80px; 
+  /* Espaçamento em cima e embaixo*/
+  margin: 70px auto; 
+  /* Limita a largura*/
+  max-width: 1200px;
+}
+
+.logo-visao:hover{
+    transform: scale(1.03);
+}
+
+.logo-missao:hover{
+  transform: scale(1.03);
+}
+
+
+.logo-missao, 
+.logo-visao {
+    /*largura máxima de cada bloco */
+    max-width: 45%; 
+    
+    /*padding para afasta o conteúdo das bordas */
+    padding: 30px; 
+    
+    /* Remove a margem desnecessária de '80px auto' que pode causar desalinhamento */
+    margin: 0; 
+
+    /* Estilo de fundo e bordas */
+    background-color: rgb(230, 240, 255); /* Azul claro suave */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+    
+    /* Alinhamento de Texto e Flex */
+    text-align: left; /* Alinha o texto à esquerda */
+    color: rgb(49, 43, 36); 
+    
+}
+
+
+.logo-missao h1, .logo-visao h1 {
+  font-size: 20px;
+  margin-top: 5px; /* Espaço entre o ícone e o título */
+  cursor: pointer;
+  position: relative;
+}
+
+.logo-missao p, .logo-visao p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555; /* Texto um pouco mais claro */
+}
+
+.light-img {
+  /* Faz os ícones ficarem no topo, usando display flex para alinhar o ícone e o título */
+  width: 40px; 
+  height: 40px;
+  margin-right: 8px;
+  float: left; /* Faz o ícone flutuar ao lado do título */
+}
+
+.mission-img{
+  margin-top: 6px;
+  margin-right: 20px;
+  float:left; 
+  width: 20px;
+  height: 20px;
+}
+
+footer{
+  background-color:rgb(11, 94, 135); /* Fundo escuro */
+  color: #f0f0f0; /* Cor do texto claro */
+  padding: 40px 0px 0;  
+  border-radius: 0;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Container que alinha as colunas */
+.footer-content {
+  display: flex;
+  flex: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #444;
+  align-items: flex-start;
+  padding: 0 40px 30px; /* Adiciona padding lateral de 40px */
+}
+
+
+.logo-section {
+  width: 35%; /* Mais espaço para o logo */
+  color:#ffffff;
+}
+
+.logo-section h3, .navegacao h3, .contato h3{
+  font-size: px;
+  margin-bottom: 20px;
+  margin-top: 5;
+  color: #fff;
+  font-weight: bold;
+}
+
+.footer-col h3 {
+  font-size: 1.1rem;
+ 
+  margin-top: 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+.navegacao ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navegacao li {
+  line-height: 1.0;
+  margin:0;
+  padding: 0;
+  display: block;
+}
+
+.navegacao a{
+  font-size: 15px;
+  color: #f0f0f0;
+  text-decoration: none;
+  display: block; /* Garante que os links fiquem um abaixo do outro */
+  width: auto;
+  
+}
+
+.contatos .contact-item {
+    line-height: 1.6;
+    display: block; /* Garante que os itens de contato fiquem um abaixo do outro */
+    font-size: 15px;
+    color: #f0f0f0;
+}
+.contatos .contact-item span {
+    display: block;
+}
+
+/* Direitos Autorais */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.85rem;
+  color: #ede1e1;
+}
+
+/* Estilo do Logo (Para alinhamento com o título) */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.logo-text {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 0; 
+}
+
+.heart-footer{
+  width: 30px;
+  height: 30px;
+}
+
+
+@media (max-width: 768px) {
+
+/* === 1. AJUSTES GERAIS DA PÁGINA === */
+    
+    /* Garante que o conteúdo principal não fique grudado nas bordas e remove margens excessivas */
+    .nav-container, 
+    .painel-ods, 
+    .descripition-desenvM {
+        width: 100% !important; /* Ocupa a largura total */
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 15px; /* Adiciona respiro nas laterais */
+        padding-right: 15px;
+        box-sizing: border-box; /* Previne que o padding aumente a largura total */
+    }
+    
+    /* Diminui o texto H1 principal (Sobre) */
+    .sobre h1{
+        font-size: 40px;
+    }
+    
+    /* O texto Sobre pode ocupar mais espaço no mobile */
+    .texto-sobre{
+        max-width: 90%;
+    }
+    
+    /* Centraliza e aumenta o tamanho das "barrinhas" de link/botão */
+    .barra2, .conheca-ods {
+        width: 60%;
+        margin: 40px auto;
+        font-size: 14px;
+    }
+
+    /* === 2. CABEÇALHO/NAVEGAÇÃO (.nav-container) === */
+    
+    .nav-container {
+        flex-direction: column; /* Empilha logo e menu */
+        align-items: center;    /* Centraliza tudo */
+        margin-top: 20px;
+        box-shadow: none;       /* Remove a sombra do container para simplificar */
+        border-radius: 0;
+    }
+    
+    .nav-container .logo {
+        margin-right: 0;
+        margin-bottom: 15px; /* Adiciona espaço abaixo do logo */
+        justify-content: center;
+    }
+    
+    .nav-container ul {
+        flex-direction: column; /* Empilha os links um abaixo do outro */
+        gap: 10px;              /* Reduz o espaço entre os links */
+    }
+    
+    .nav-container a {
+        margin-right: 0;
+        font-size: 18px;
+    }
+
+    /* === 3. PAINEL ODS (Cards) === */
+    
+    .ods-container {
+        /* Muda de 5 colunas para 2 colunas no mobile */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    /* Reduz o tamanho do card para caber em 2 colunas no mobile */
+    .card-flip-container {
+        width: 140px; 
+        height: 140px;
+    }
+
+    /* Ajuste de fonte dos cards */
+    .back h3, .back p {
+        font-size: 12px;
+    }
+
+    /* === 4. VALORES (MISSÃO E VISÃO) === */
+
+    .descripition-desenvM {
+        flex-direction: column; /* Empilha Missão e Visão */
+        gap: 30px;              /* Espaço entre as caixas empilhadas */
+        margin: 40px auto;
+    }
+
+    .logo-missao, 
+    .logo-visao {
+        max-width: 100%; /* Ocupa a largura total do container */
+        padding: 20px;
+        text-align: center; /* Centraliza texto e ícones */
+    }
+    
+    /* Ajusta flutuação dos ícones (float não é responsivo) */
+    .light-img, .mission-img {
+        float: none; 
+        display: block; /* Garante que o ícone fique na própria linha */
+        margin: 0 auto 10px; /* Centraliza o ícone */
+    }
+
+
+    /*==== footer responsivo===*/
+    
+    /* 1. Empilhar as Colunas e Adicionar Espaçamento */
+    .footer-content {
+        /* Faz as colunas (logo, navegacao, contato) ficarem uma abaixo da outra */
+        flex-direction: column; 
+        /* Adiciona um padding interno para dar respiro */
+        padding: 0 20px 30px; 
+    }
+
+    /* 2. Fazer Colunas Ocuparem 100% da Largura */
+    .logo-section,
+    .navegacao,
+    .contatos { /* Atenção: Corrigi 'contato' para 'contatos' */
+        width: 100%; /* Ocupa toda a largura disponível */
+        margin-bottom: 30px; /* Adiciona espaço entre as colunas empilhadas */
+        text-align: center; /* Centraliza o conteúdo (opcional, mas comum em mobile) */
+    }
+
+    /* 3. Centralizar Itens Específicos */
+    .footer-logo {
+        /* Para centralizar o logo (imagem + texto) */
+        justify-content: center;
+    }
+    
+    /* 4. Ajustes de Fonte (Opcional) */
+    .logo-text {
+        font-size: 30px;
+    }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .barra2 {
+    width: 40%;
+    font-size: 14px;
+  }
+
+  .logo-heart img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .logo-heart h2 {
+    font-size: 20px;
+  }
+}
+
+/* =======================================
+   AJUSTE PARA TELAS ENTRE 1283px e 790px
+========================================= */
+@media (max-width: 1283px) and (min-width: 500px) {
+
+  /* Caixa principal dos ODS */
+  .ods-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 ODS por linha */
+    gap: 30px;
+    width: 90%;
+    margin: 0 auto;
+    justify-items: center;
+  }
+
+  .ods-container img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  /* "Nosso Propósito" */
+  .barra2 {
+    width: 45%;
+    font-size: 15px;
+  }
+
+  .logo-heart {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo-heart img {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* Rodapé */
+  footer {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .footer-content p {
+    max-width: 80%;
+  }
+
+  .navegacao ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,302 @@
+/* Garante que o padding não aumente o tamanho dos elementos */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body{
+
+    color:rgb(0, 0, 0);
+    background-color: rgb(250, 253, 252);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+li, a {
+    font-size: clamp( 1.25rem, 1.5vw, 1.2rem);
+    color: rgb(117, 157, 192);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*cabeçalho*/
+header {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    padding: 50px 0 0 0;
+}
+
+/*container principal do nav */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    width: min(86%, 1180px); /* barra responsiva que não ocupa 100% */
+    gap: clamp (1rem, 3vw, 3rem); /* espaco entre menu qnd quebra*/
+
+    background-color: #fff;
+    border: 0px solid #3589b2;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 13px 60px; /* Respiro nas laterais do celular */
+}
+
+/* Estilo do Logo (Imagem e tulo) */
+.logo {
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    margin-right: 0;
+}
+
+.logo h1{
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+.ods-img{
+  width: clamp(50px, 5vw, 50px);
+  height: auto;
+}
+
+.nav-links {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 150px;              
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+}
+
+.nav-spacer {
+    /*Garante que o spacer ocupe o mesmo espaço visual do logo */
+    min-width: 266.69px; 
+    visibility: hidden;
+    height: 1px;
+    /* Opcional: para garantir que ele não seja visível */
+    pointer-events: none; 
+    flex-shrink: 0;
+}
+
+
+/* --- Estilos do Conteúdo Principal (Painel de Quadrados) --- */
+.ods-painel {
+    /* Espaçamento acima e abaixo do painel */
+    padding: 60px 20px; 
+}
+
+.painel-grid {
+    /* Centraliza o grid na página e limita a largura */
+    width: min(95%, 1100px); 
+    margin: 0 auto; 
+    
+    display: grid;
+    /* 🔑 CHAVE DA RESPONSIVIDADE: Cria colunas que se ajustam automaticamente */
+    /* Haverá o máximo de colunas cabíveis, cada uma com no mínimo 300px. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Espaço entre os quadrados (Vertical e Horizontal) */
+}
+
+.quadrado {
+    /* Estilo visual base */
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+/* Estilos de Conteúdo */
+.quadrado h3 {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.quadrado h4 {
+    color: rgb(117, 157, 192); /* Cor dos links */
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+.quadrado p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.quadrado hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+
+/* --- Estilos da Caixa de Boas-Vindas (Antes do Main) --- */
+.boas-vindas-box {
+    width: min(90%, 900px); 
+    /* Centraliza a caixa e a posiciona entre a barra e os quadros */
+    margin: 40px auto 60px auto; 
+    padding: 30px;
+    background-color: #f0f8ff; 
+    border: 1px solid #cceeff; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.boas-vindas-box h2 {
+    color: #3589b2; 
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-bottom: 15px;
+}
+
+.boas-vindas-box p {
+    color: #555;
+    font-size: clamp(1rem, 1.6vw, 1.1rem);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+footer{
+  background-color:rgb(11, 94, 135); /* Fundo escuro */
+  color: #f0f0f0; /* Cor do texto claro */
+  padding: 40px 0px 0;  
+  border-radius: 0;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Container que alinha as colunas */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #444;
+  align-items: flex-start;
+  padding: 0 40px 30px; /* Adiciona padding lateral de 40px */
+}
+
+
+.logo-section {
+  width: 35%; /* Mais espaço para o logo */
+  color:#ffffff;
+}
+
+.logo-section h3, .navegacao h3, .contato h3{
+  font-size: px;
+  margin-bottom: 20px;
+  margin-top: 5;
+  color: #fff;
+  font-weight: bold;
+}
+
+.footer-col h3 {
+  font-size: 1.1rem;
+ 
+  margin-top: 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+.navegacao ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navegacao li {
+  line-height: 1.0;
+  margin:0;
+  padding: 0;
+  display: block;
+}
+
+.navegacao a{
+  font-size: 15px;
+  color: #f0f0f0;
+  text-decoration: none;
+  display: block; /* Garante que os links fiquem um abaixo do outro */
+  width: auto;
+  
+}
+
+.contatos .contact-item {
+    line-height: 1.6;
+    display: block; /* Garante que os itens de contato fiquem um abaixo do outro */
+    font-size: 15px;
+    color: #f0f0f0;
+}
+.contatos .contact-item span {
+    display: block;
+}
+
+/* Direitos Autorais */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.85rem;
+  color: #ede1e1;
+}
+
+/* Estilo do Logo (Para alinhamento com o título) */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.logo-text {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 0; 
+}
+
+.heart-footer{
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 768px) {
+ /*==== footer responsivo===*/
+    
+    /* 1. Empilhar as Colunas e Adicionar Espaçamento */
+    .footer-content {
+        /* Faz as colunas (logo, navegacao, contato) ficarem uma abaixo da outra */
+        flex-direction: column; 
+        /* Adiciona um padding interno para dar respiro */
+        padding: 0 20px 30px; 
+    }
+
+    /* 2. Fazer Colunas Ocuparem 100% da Largura */
+    .logo-section,
+    .navegacao,
+    .contatos { /* Atenção: Corrigi 'contato' para 'contatos' */
+        width: 100%; /* Ocupa toda a largura disponível */
+        margin-bottom: 30px; /* Adiciona espaço entre as colunas empilhadas */
+        text-align: center; /* Centraliza o conteúdo (opcional, mas comum em mobile) */
+    }
+
+    /* 3. Centralizar Itens Específicos */
+    .footer-logo {
+        /* Para centralizar o logo (imagem + texto) */
+        justify-content: center;
+    }
+    
+    /* 4. Ajustes de Fonte (Opcional) */
+    .logo-text {
+        font-size: 30px;
+    }
+}
