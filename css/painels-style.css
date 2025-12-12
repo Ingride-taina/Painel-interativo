@@ -39,11 +39,6 @@ header {
     flex-wrap: wrap; 
     width: min(86%, 1180px); /* barra responsiva que não ocupa 100% */
     gap: clamp (1rem, 3vw, 3rem); /* espaco entre menu qnd quebra*/
-
-    background-color: #fff;
-    border: 0px solid #3589b2;
-    border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 13px 60px; /* Respiro nas laterais do celular */
 }
 
@@ -298,7 +293,15 @@ footer{
 @media (max-width: 900px) {
   .nav-links {
     align-items: center;
-    padding-left: 15px;
+    padding-left: 20%;
     gap: 50px; /* Reduz o espaçamento entre os links em telas menores */
   }
+
+  .logo {
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    margin-left: 10%;
+}
+ 
 }
