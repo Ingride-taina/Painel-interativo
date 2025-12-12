@@ -14,8 +14,8 @@ const odsList = [
   { img: './img/ods13.png', titulo: 'Ação Contra a Mudança Global do Clima', desc: 'Tomar medidas urgentes para combater a mudança climática.' },
   { img: './img/ods14.png', titulo: 'Vida na Água', desc: 'Conservar e usar de forma sustentável os oceanos, mares e recursos marinhos.' },
   { img: './img/ods15.png', titulo: 'Vida Terrestre', desc: 'Proteger, recuperar e promover o uso sustentável dos ecossistemas terrestres.' },
-  { img: './img/ods16.png', titulo: 'Paz, Justiça e Instituições Eficazes', desc: 'Promover sociedades pacíficas e inclusivas para o desenvolvimento sustentável.' },
-  { img: './img/ods17.png', titulo: 'Parcerias e Meios de Implementação', desc: 'Fortalecer os meios de implementação e revitalizar a parceria global para o desenvolvimento sustentável.' },
+  { img: './img/ods16.png', titulo: 'Paz, Justiça e Instituições Eficazes', desc: 'Promover inclusão e pacificidade social para o desenvolvimento sustentável.' },
+  { img: './img/ods17.png', titulo: 'Parcerias Meios de Implementação', desc: 'revitalizar a parceria global para desenvolvimento sustentável.' },
   { img: './img/ods18.png', titulo:'   ', desc:'  '}
   
 ];
