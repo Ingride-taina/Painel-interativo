@@ -25,6 +25,7 @@ a:hover {
 /*cabeçalho*/
 header {
     display: flex;
+    
     justify-content: center;
     background-color: transparent;
     padding: 50px 0 0 0;
@@ -291,5 +292,13 @@ footer{
 
   .footer-logo {
     justify-content: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    align-items: center;
+    padding-left: 15px;
+    gap: 50px; /* Reduz o espaçamento entre os links em telas menores */
   }
 }

@@ -34,42 +34,75 @@ a:hover {
 
 }
 
-
-.ods-img {
-  margin-left:30px;
-    width: 50px;
-    height: 50px;
+/*cabeçalho*/
+header {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    padding: 50px 0 0 0;
 }
 
-.logo {
-  display: flex;
-  margin-right: 0;
-  align-items: center;
-  gap: 10px; /* espaço entre a imagem e o texto */
-  color:rgb(0, 0, 0);
-  font-size: 15px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
+/*container principal do nav */
 .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    width: min(86%, 1180px); /* barra responsiva que não ocupa 100% */
+    gap: clamp (1rem, 3vw, 3rem); /* espaco entre menu qnd quebra*/
 
-  border-radius: 50px;      
-  margin: 20px auto;
-  display: flex;
-  margin-top: 50px;            /* distância das bordas da página */
-  justify-content: space-between; /* logo de um lado, menu do outro */
-  align-items: center; /* centraliza verticalmente */
-  width: 90%;  /* faz a barra não ocupar 100% */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra leve */
+    background-color: #fff;
+    border: 0px solid #3589b2;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 13px 60px; /* Respiro nas laterais do celular */
+}
+
+/* Estilo do Logo (Imagem e tulo) */
+.logo {
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    margin-right: 0;
+}
+
+.logo h1{
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+.ods-img{
+  width: clamp(50px, 5vw, 50px);
+  height: auto;
+}
+
+.nav-links {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 150px;              
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+}
+
+.nav-spacer {
+    /*Garante que o spacer ocupe o mesmo espaço visual do logo */
+    min-width: 266.69px; 
+    visibility: hidden;
+    height: 1px;
+    /* Opcional: para garantir que ele não seja visível */
+    pointer-events: none; 
+    flex-shrink: 0;
 }
 
 
 
 .barra2 {
   font-size: 11px;
-  display: flex;
   justify-content: center;
-  max-width:40%;   
+  max-width:0%;   
   border: 0px solid #ccc; 
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra leve */
   border-radius: 50px;
@@ -80,7 +113,7 @@ a:hover {
 }
 
 .logo-heart{
-  text-align: center;
+  align-items: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,6 +128,7 @@ a:hover {
 .sobre{
   
   text-align: center; /* centraliza o texto da seção */
+ 
 }
 
 .sobre h1{
@@ -153,6 +187,8 @@ text-align: center;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   justify-items: center;
 }
+
+
 /* cada card que pode virar */
 .card-flip-container {
   width: 100%;
@@ -253,13 +289,14 @@ text-align: center;
 
 
 .back h3 {
-  margin-bottom: 15px;
-  font-size: 14px;
+  margin-bottom: 1px;
+  font-size: 9px;
 }
 
 .back p {
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.%;
+  line-break: auto;
 }
 
 /*=== valores===*/
@@ -277,8 +314,9 @@ text-align: center;
 
 .descripition-desenvM {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center; 
-  gap: 30px; 
+  gap: 20px; 
   /* Espaçamento em cima e embaixo*/
   margin: 70px auto; 
   /* Limita a largura*/
@@ -286,7 +324,8 @@ text-align: center;
 }
 
 .logo-visao:hover{
-    transform: scale(1.03);
+  transform: scale(1.03);
+  
 }
 
 .logo-missao:hover{
@@ -322,17 +361,22 @@ text-align: center;
   margin-top: 5px; /* Espaço entre o ícone e o título */
   cursor: pointer;
   position: relative;
+  flex-wrap: wrap;
+  display: flex;
+
 }
 
 .logo-missao p, .logo-visao p {
   font-size: 16px;
   line-height: 1.6;
   color: #555; /* Texto um pouco mais claro */
+  text-align: justify;
+
 }
 
 .light-img {
   /* Faz os ícones ficarem no topo, usando display flex para alinhar o ícone e o título */
-  width: 40px; 
+  width: 50px; 
   height: 40px;
   margin-right: 8px;
   float: left; /* Faz o ícone flutuar ao lado do título */
@@ -342,8 +386,9 @@ text-align: center;
   margin-top: 6px;
   margin-right: 20px;
   float:left; 
-  width: 10px;
-  height: 20px;
+  width: 33px;
+  height: 30px;
+  float: left; /* Faz o ícone flutuar ao lado do título */
 }
 
 
@@ -456,7 +501,7 @@ footer{
 .logo-section,
 .navegacao,
 .contatos {
-  width: 33%;  /* pc */
+  width: 0.%;  /* pc */
 }
 
 @media (max-width: 768px) {
@@ -472,3 +517,107 @@ footer{
     justify-content: center;
   }
 }
+
+/* Mobile */
+@media (max-width: 900px) {
+  .ods-container {
+    grid-template-columns: repeat(2, 2fr); /* QUEBRA em 2 colunas */
+  }
+
+  .back p {
+  font-size: 9px;
+  width: 100%;
+  text-align: cente;
+}
+.texto-sobre{
+
+max-width: 100%;
+margin: 20px auto;    
+font-size: 20px;
+line-height: 1.%;
+text-align: center;
+}
+
+.sobre h1{
+  font-size: 50px;
+}
+
+
+.logo-missao p, .logo-visao p {
+  font-size: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 100%;
+  color: #555; /* Texto um pouco mais claro */
+  text-align:justify;
+
+}
+ .descripition-desenvM {
+    flex-direction: column;
+    align-items: center; /* opcional, deixa centralizado */
+  }
+
+.logo-missao, 
+.logo-visao {
+    /*largura máxima de cada bloco */
+    max-width: 100%; 
+    
+    /*padding para afasta o conteúdo das bordas */
+    padding: 30px; 
+    
+    /* Remove a margem desnecessária de '80px auto' que pode causar desalinhamento */
+    margin: 0; 
+
+}
+
+
+.barra2 {
+  font-size: 11px;
+  justify-content: center;
+  max-width:90%;   
+  border: 0px solid #ccc; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra leve */
+  border-radius: 50px;
+  margin: 80px auto;
+  background-color:rgb(141, 188, 200);
+  color: rgb(49, 43, 36);  
+  text-align: center;
+}
+
+/* ===== CONHEÇA ODS========*/
+.conheca-ods{  
+
+  justify-content: center;
+  display: flex;
+  font-size: 10px;
+  width: 90%;   
+  border: 0px solid #ccc; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra leve */
+  border-radius: 50px;
+  margin: 85px auto;
+  background-color:rgb(234, 238, 238);
+  color: rgb(49, 43, 36);  
+}
+
+/*container principal do nav */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-links {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 10px;              
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+}
+
+
+
+}
+
