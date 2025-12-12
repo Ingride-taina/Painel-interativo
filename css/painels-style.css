@@ -172,30 +172,35 @@ header {
 footer{
   background-color:rgb(11, 94, 135); /* Fundo escuro */
   color: #f0f0f0; /* Cor do texto claro */
-  padding: 40px 0px 0;  
+  padding: 40px 0 0;  
   border-radius: 0;
+  box-sizing: border-box;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /* Container que alinha as colunas */
 .footer-content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  padding-bottom: 30px;
+  padding-bottom: 0 20px 30px;
   border-bottom: 1px solid #444;
   align-items: flex-start;
   padding: 0 40px 30px; /* Adiciona padding lateral de 40px */
 }
 
 
+
 .logo-section {
   width: 35%; /* Mais espaço para o logo */
   color:#ffffff;
+  
 }
 
-.logo-section h3, .navegacao h3, .contato h3{
+.logo-section , .navegacao , .contato {
   font-size: px;
   margin-bottom: 20px;
   margin-top: 5;
@@ -205,7 +210,6 @@ footer{
 
 .footer-col h3 {
   font-size: 1.1rem;
- 
   margin-top: 0;
   color: #fff;
   font-weight: bold;
@@ -244,6 +248,7 @@ footer{
     display: block;
 }
 
+
 /* Direitos Autorais */
 .footer-bottom {
   text-align: center;
@@ -256,12 +261,12 @@ footer{
 .footer-logo {
     display: flex;
     align-items: center;
+    gap: 10px;
     margin-bottom: 15px;
 }
 .logo-text {
-    font-size: 40px;
-    font-weight: bold;
-    margin-top: 0; 
+    font-size: 30px;
+    height: 30 ;
 }
 
 .heart-footer{
@@ -269,34 +274,22 @@ footer{
   height: 30px;
 }
 
+.logo-section,
+.navegacao,
+.contatos {
+  width: 33%;  /* pc */
+}
+
 @media (max-width: 768px) {
- /*==== footer responsivo===*/
-    
-    /* 1. Empilhar as Colunas e Adicionar Espaçamento */
-    .footer-content {
-        /* Faz as colunas (logo, navegacao, contato) ficarem uma abaixo da outra */
-        flex-direction: column; 
-        /* Adiciona um padding interno para dar respiro */
-        padding: 0 20px 30px; 
-    }
+  .logo-section,
+  .navegacao,
+  .contatos {
+    width: 100%;       /* 👉 vira tudo coluna única */
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-    /* 2. Fazer Colunas Ocuparem 100% da Largura */
-    .logo-section,
-    .navegacao,
-    .contatos { /* Atenção: Corrigi 'contato' para 'contatos' */
-        width: 100%; /* Ocupa toda a largura disponível */
-        margin-bottom: 30px; /* Adiciona espaço entre as colunas empilhadas */
-        text-align: center; /* Centraliza o conteúdo (opcional, mas comum em mobile) */
-    }
-
-    /* 3. Centralizar Itens Específicos */
-    .footer-logo {
-        /* Para centralizar o logo (imagem + texto) */
-        justify-content: center;
-    }
-    
-    /* 4. Ajustes de Fonte (Opcional) */
-    .logo-text {
-        font-size: 30px;
-    }
+  .footer-logo {
+    justify-content: center;
+  }
 }
