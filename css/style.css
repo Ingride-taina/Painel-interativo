@@ -50,7 +50,7 @@ header {
     flex-wrap: wrap; 
     width: min(86%, 1180px); /* barra responsiva que não ocupa 100% */
     gap: 10px; /* espaco entre menu qnd quebra*/
-     gap: clamp (1rem, 3vw, 3rem); /* espaco entre menu qnd quebra*/
+    gap: clamp (1rem, 3vw, 3rem); /* espaco entre menu qnd quebra*/
     padding: 7px 60px; /* Respiro nas laterais do celular */
 }
 
@@ -150,11 +150,11 @@ text-align: center;
   font-size: 10px;
   width: 20%;   
   border: 0px solid #ccc; 
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra leve */
+  box-shadow: 0 4px 8px rgba(110, 142, 178, 0.1); /* sombra leve */
   border-radius: 50px;
   margin: 85px auto;
   background-color:rgb(234, 238, 238);
-  color: rgb(49, 43, 36);  
+  color: rgb(80, 88, 126);  
 }
 
 /* ======= PAINEL ODS ======= */
