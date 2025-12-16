@@ -526,6 +526,12 @@ footer{
 
 /* Mobile */
 @media (max-width: 900px) {
+
+  /* quando clicado */
+.card-flip-container.flipped .card {
+  transform: rotateY(180deg);
+
+}
   .ods-container {
     grid-template-columns: repeat(2, 2fr); /* QUEBRA em 2 colunas */
   }

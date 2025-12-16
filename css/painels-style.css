@@ -270,11 +270,6 @@ footer{
   height: 30px;
 }
 
-.logo-section,
-.navegacao,
-.contatos {
-  width: 33%;  /* pc */
-}
 
 @media (max-width: 768px) {
   .logo-section,
